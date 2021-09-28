@@ -1,0 +1,8 @@
+<template name="MainLayout">
+    {{> headerBar}}
+    {{#if currentUser}}
+        {{> Template.dynamic template=main}}
+    {{else}}
+        {{> Template.dynamic template=notLoggedIn}}
+    {{/if}}
+</template>

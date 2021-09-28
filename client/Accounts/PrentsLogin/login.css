@@ -1,0 +1,11 @@
+.required {
+    background-color: rgb(219, 219, 23);
+}
+
+.required_missed {
+    border: 1px solid red;
+}
+
+.mismatch {
+    background-color: rgb(235, 98, 98);
+}

@@ -1,0 +1,36 @@
+<template name="parentLogin">
+    {{#if $not currentUser}}
+        <div id="signInForm">
+            <div class="container">
+                <h3>Parent / Guardian Login</h3>
+                <p>It is very important to the safety of all children that you do not share your login credentials with anyone.</p>
+                <form class="login">
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <input type="email" name="email" id="email" class="email {{#if $eq misEmail true}}red lighten-3{{/if}}" />
+                            <label for="email">Email *</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <input type="password" name="password" id="password" class="password {{#if $eq misPass true}}red lighten-3{{/if}}" />
+                            <label for="password">Password *</label>
+                        </div>
+                    </div>
+                    {{#if $eq areFilled false}}
+                        <div class="row">
+                            <div class="col s12 red lighten-3 white-text">
+                                <span>You must fill all fields to login.</span>
+                            </div>
+                        </div>
+                    {{/if}}
+                    <div class="row">
+                        <div class="col s12">
+                            <a id="logmein" class="waves-effect waves-light btn logmein green darken-1">Log In</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {{/if}}
+</template>

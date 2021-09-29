@@ -4,41 +4,52 @@
             <div class="container">
                 <h3>Parent / Guardian Registration</h3>
                 <p>It is very important to the safety of all children that you do not share your login credentials with anyone.</p>
-                <form class="register">
-                    <div class="row">
-                        <div class="col s12 input-field">
-                            <input type="text" name="name" class="name {{#if $eq misName true}}red lighten-3{{/if}}" id="name" />
-                            <label for="name">Your Full Name *</label>
-                        </div>
-                        <div class="col s12 input-field">
-                            <input type="tel" name="phone" class="phone {{#if $eq misPhone true}}red lighten-3{{/if}}" id="phone" />
-                            <label for="phone">Best Phone Number *</label>
-                        </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <form class="register">
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <input type="text" name="name" class="name {{#if $eq misName true}}red lighten-3{{/if}}" id="name" />
+                                            <label for="name">Your Full Name *</label>
+                                        </div>
+                                        <div class="col s12 input-field">
+                                            <input type="tel" name="phone" class="phone {{#if $eq misPhone true}}red lighten-3{{/if}}" id="phone" />
+                                            <label for="phone">Best Phone Number *</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <input type="email" name="email" id="email" class="email {{#if $eq misEmail true}}red lighten-3{{/if}}" />
+                                            <label for="email">Email *</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <input type="password" name="password" id="password" class="password {{#if $eq misPass true}}red lighten-3{{/if}}" />
+                                            <label for="password">Password *</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field {{#if $eq canReg false}}orange lighten-1{{/if}}">
+                                            <input type="password" name="passwordConfirm" id="passwordConfirm" class="passwordConfirm" />
+                                            <label for="passwordConfirm">Confirm Password *</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <a id="registerMe" class="waves-effect waves-light btn registerMe {{#if $eq canReg false}}grey{{else}}green darken-1{{/if}}">Register</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-action">
+                              <a href="#" id="parguarlogin">Sign In</a>
+                            </div>
+                          </div>
                     </div>
-                    <div class="row">
-                        <div class="col s12 input-field">
-                            <input type="email" name="email" id="email" class="email {{#if $eq misEmail true}}red lighten-3{{/if}}" />
-                            <label for="email">Email *</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 input-field">
-                            <input type="password" name="password" id="password" class="password {{#if $eq misPass true}}red lighten-3{{/if}}" />
-                            <label for="password">Password *</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 input-field {{#if $eq canReg false}}orange lighten-1{{/if}}">
-                            <input type="password" name="passwordConfirm" id="passwordConfirm" class="passwordConfirm" />
-                            <label for="passwordConfirm">Confirm Password *</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <a id="registerMe" class="waves-effect waves-light btn registerMe {{#if $eq canReg false}}grey{{else}}green darken-1{{/if}}">Register</a>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     {{/if}}

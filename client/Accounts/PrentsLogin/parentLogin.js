@@ -25,5 +25,9 @@ Template.parentLogin.events({
         } else {
             Meteor.loginWithPassword(email, pass);
         }
-    }
+    },
+    'click #parentReg' (event) {
+        event.preventDefault();
+        FlowRouter.go('/parentReg');
+    },
 });

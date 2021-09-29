@@ -66,6 +66,8 @@ Template.parentsRegistration.events({
                 Session.set("missingPassword", true);
             }
 
+            let userId;
+
             if (missingName == true || missingPhone == true || missingEmail == true || missingPassword == true) {
                 Session.set("missingReq", true);
             } else {
@@ -78,7 +80,17 @@ Template.parentsRegistration.events({
                         phone: phone,
                     }
                 });
-                FlowRouter.go('/');
+                
+                let userId = Meteor.userId();
+                console.log("User ID: " + userId);
+                Meteor.call("addToRole", "parent", function(err, result) {
+                    if (err) {
+                        console.log("Error adding user to role: " + err);
+                    } else {
+                        console.log("User should be added to role - parent.");
+                        FlowRouter.go('/dashboard');
+                    }
+                });
             }
         }
     },
@@ -103,5 +115,9 @@ Template.parentsRegistration.events({
         } else {
             Session.set("missingEmail", false);
         }
-    }
+    },
+    'click #parguarlogin' (event) {
+        event.preventDefault();
+        FlowRouter.go('/parguarlogin');
+    },
 });

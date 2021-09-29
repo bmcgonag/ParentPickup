@@ -33,4 +33,8 @@ Template.headerBar.events({
         FlowRouter.go('/');
         Meteor.logout();
     },
+    'click #brandLogo' (event) {
+        event.preventDefault();
+        FlowRouter.go('/');
+    },
 });

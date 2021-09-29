@@ -7,14 +7,15 @@ Template.headerBar.onRendered(function() {
     $('.sidenav').sidenav();
     setTimeout(function() {
         $('.sidenav').sidenav();
+        $(".dropdown-trigger").dropdown();
     }, 100)
-
     $(".dropdown-trigger").dropdown();
-        
 });
 
 Template.headerBar.helpers({
-
+    adminReg: function() {
+        return Session.get("adminreg");
+    },
 });
 
 Template.headerBar.events({

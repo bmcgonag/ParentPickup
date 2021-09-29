@@ -1,5 +1,5 @@
 
-Template.parentsRegistration.onRendered(function() {
+Template.teacherRegistration.onRendered(function() {
     Session.set("canreg", false);
     Session.set("missingReq", false);
     Session.set("missingName", false);
@@ -8,7 +8,7 @@ Template.parentsRegistration.onRendered(function() {
     Session.set("missingPassword", false);
 });
 
-Template.parentsRegistration.helpers({
+Template.teacherRegistration.helpers({
     canReg: function() {
         return Session.get("canreg");
     },
@@ -29,13 +29,13 @@ Template.parentsRegistration.helpers({
     }
 });
 
-Template.parentsRegistration.events({
+Template.teacherRegistration.events({
     'click #registerMe' (event) {
         event.preventDefault();
         if (Session.get("canreg") == false) {
-            console.log("reg disabled.");
+            // console.log("reg disabled.");
         } else {
-            console.log("Clicked");
+            // console.log("Clicked");
             let missingName = false;
             let missingPhone = false;
             let missingEmail = false;
@@ -83,11 +83,11 @@ Template.parentsRegistration.events({
                 
                 let userId = Meteor.userId();
                 console.log("User ID: " + userId);
-                Meteor.call("addToRole", "parent", function(err, result) {
+                Meteor.call("addToRole", "teacher", function(err, result) {
                     if (err) {
                         console.log("    ERROR: ROLES - Error adding user to role: " + err);
                     } else {
-                        // console.log("User should be added to role - parent.");
+                        // console.log("User should be added to role - teacher.");
                         FlowRouter.go('/dashboard');
                     }
                 });
@@ -116,8 +116,8 @@ Template.parentsRegistration.events({
             Session.set("missingEmail", false);
         }
     },
-    'click #parguarlogin' (event) {
+    'click #teachLogin' (event) {
         event.preventDefault();
-        FlowRouter.go('/parguarlogin');
+        FlowRouter.go('/teachlogin');
     },
 });

@@ -1,0 +1,69 @@
+<template name="systemAdminReg">
+    {{#if Template.subscriptionsReady}}
+    {{#if $not currentUser}}
+        <div id="registrationForm">
+            <div class="container">
+                {{#if $eq allowedReg true}}
+                    <h3>System Admin Registration</h3>
+                    <p>If you want to disable System Admin registration after creating this account, please check the box.</p>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <form class="register">
+                                        <div class="row">
+                                            <div class="col s12 input-field">
+                                                <input type="text" name="name" class="name {{#if $eq misName true}}red lighten-3{{/if}}" id="name" />
+                                                <label for="name">Your Full Name *</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 input-field">
+                                                <input type="email" name="email" id="email" class="email {{#if $eq misEmail true}}red lighten-3{{/if}}" />
+                                                <label for="email">Email *</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 input-field">
+                                                <input type="password" name="password" id="password" class="password {{#if $eq misPass true}}red lighten-3{{/if}}" />
+                                                <label for="password">Password *</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 input-field {{#if $eq canReg false}}orange lighten-1{{/if}}">
+                                                <input type="password" name="passwordConfirm" id="passwordConfirm" class="passwordConfirm" />
+                                                <label for="passwordConfirm">Confirm Password *</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <p>
+                                                    <label>
+                                                    <input type="checkbox" id="disableSysAdminReg" />
+                                                    <span>Disable Future System Admin Registrations</span>
+                                                    </label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <a id="registerMe" class="waves-effect waves-light btn registerMe {{#if $eq canReg false}}grey{{else}}green darken-1{{/if}}">Register</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" id="sysAdminLogin">Sign In</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{else}}
+                    <h3>System Admin Registration Disabled</h3>
+                    <p>A system administrator has disabled the ability to register as a new system admin.  If you believe this was done mistakenly, contact a current system administrator for this system, and have them change this setting.</p>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+    {{/if}}
+</template>

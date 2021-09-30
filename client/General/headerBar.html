@@ -25,9 +25,19 @@
         </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        {{#if currentUser}}
+              <!-- For Parents / Guardians -->
+              {{#if isInRole "parent"}}
+              <li><a href="#">Add Trusted People</a></li>
+              <li><a href="#">Add Trusted Vehicles</a></li>
+              <li><a href="#">Add Cautions</a></li>
+              {{/if}}
+              <li class="signOut"><a href="#" class="signOut">Log Out</a></li>
+            {{else}}
+              <li><a href="#!" id="adminmainlogin" class="navBtn">Admin</a></li>
+              <li><a href="#!" id="teachlogin" class="navBtn">Teacher</a></li>
+              <li><a href="#!" id="parguarlogin" class="navBtn">Parent / Guardian</a></li>
+              <li><a href="#!" id="monlogin" class="navBtn">Monitor</a></li>
+            {{/if}}
       </ul>
 </template>

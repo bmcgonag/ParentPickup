@@ -13,12 +13,6 @@
               </div>
               <div class="row">
                   <div class="col s12 input-field">
-                      <input type="text" class="entityCode" id="entityCode">
-                      <label for="entityCode">Entity Code</label>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col s12 input-field">
                       <input type="text" class="entityAddress" id="entityAddress">
                       <label for="entityAddress">Address</label>
                   </div>
@@ -64,11 +58,11 @@
                       <label for="entityType">Entity Type</label>
                   </div>
                   <div class="col s12 m4 l4 input-field">
-                      <input type="text" class="entityCode" id="entityCode" />
+                      <input type="text" class="entityCode" id="entityCode"  value="{{#if $eq useCodeGen true}}{{codeGen}}{{/if}}"/>
                       <label for="entityCode">Entity Code</label>
                   </div>
                   <div class="col s12 m2 l2">
-                    <a class="waves-effect waves-light btn tooltipped sdgenerateEntityCode" data-position="bottom" data-tooltip="Generate Entity Code" id="generateEntityCode"><i class="material-icons">refresh</i></a>
+                    <a class="waves-effect waves-light btn tooltipped generateEntityCode" data-position="bottom" data-tooltip="Generate Entity Code" id="generateEntityCode"><i class="material-icons">refresh</i></a>
                   </div>
               </div>
               <div class="row">

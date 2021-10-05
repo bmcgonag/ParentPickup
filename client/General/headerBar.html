@@ -11,11 +11,18 @@
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             {{#if currentUser}}
+              <!-- System Admins -->
+
+              {{#if isInRole "systemadmin"}}
+                <li><a href="#" id="createServiceEntity" class="navBtn">Create New Service Entity</a></li>
+              {{/if}}
+
               <!-- For Parents / Guardians -->
+
               {{#if isInRole "parent"}}
-              <li><a href="#">Add Trusted People</a></li>
-              <li><a href="#">Add Trusted Vehicles</a></li>
-              <li><a href="#">Add Cautions</a></li>
+                <li><a href="#">Add Trusted People</a></li>
+                <li><a href="#">Add Trusted Vehicles</a></li>
+                <li><a href="#">Add Cautions</a></li>
               {{/if}}
               <li class="signOut"><a href="#" class="signOut">Log Out</a></li>
             {{else}}
@@ -26,7 +33,14 @@
       </nav>
       <ul class="sidenav" id="mobile-demo">
         {{#if currentUser}}
+              <!-- System Admins -->
+
+              {{#if isInRole "systemadmin"}}
+                <li><a href="#" id="createServiceEntity" class="navBtn">Create New Service Entity</a></li>
+              {{/if}}
+
               <!-- For Parents / Guardians -->
+
               {{#if isInRole "parent"}}
               <li><a href="#">Add Trusted People</a></li>
               <li><a href="#">Add Trusted Vehicles</a></li>

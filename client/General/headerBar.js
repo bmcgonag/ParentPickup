@@ -36,6 +36,6 @@ Template.headerBar.events({
     },
     'click #brandLogo' (event) {
         event.preventDefault();
-        FlowRouter.go('/');
+        FlowRouter.go('/dashboard');
     },
 });

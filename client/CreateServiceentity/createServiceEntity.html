@@ -1,0 +1,87 @@
+<template name="createServiceEntity">
+    <h2>Create a Service Entity</h2>
+    <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">New Service Entity</span>
+              <div class="row">
+                  <div class="col s12 input-field">
+                    <input type="text" class="entityName" id="entityName">
+                    <label for="entityName">Entity Name</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 input-field">
+                      <input type="text" class="entityCode" id="entityCode">
+                      <label for="entityCode">Entity Code</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 input-field">
+                      <input type="text" class="entityAddress" id="entityAddress">
+                      <label for="entityAddress">Address</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 m6 l6 input-field">
+                      <input type="text" class="entityCity" id="entityCity" />
+                      <label for="entityCity">City</label>
+                  </div>
+                  <div class="col s12 m3 l3 input-field">
+                      <input type="text" class="entityState" id="entityState">
+                      <label for="entityState">State</label>
+                  </div>
+                  <div class="col s12 m3 l3 input-field">
+                      <input type="text" class="entityZip" id="entityZip" />
+                      <label for="entityZip">Postal / Zip Code</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 m6 l6 input-field">
+                      <input type="tel" class="entityPhone" id="entityPhone" />
+                      <label for="entityPhone">Primary Phone</label>
+                  </div>
+                  <div class="col s12 m6 l6 input-field">
+                      <input type="email" class="entityEmail" id="entityEmail" />
+                      <label for="entityEmail">Primary Email</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 m6 l6 input-field">
+                      <select name="entityType" id="entityType" class="entityType">
+                          <option value="" disabled selected>Choose One...</option>
+                          <option value="School">School</option>
+                          <option value="Church">Church</option>
+                          <option value="Daycare">Daycare</option>
+                          <option value="Hospital">Hospital</option>
+                          <option value="Elder Care">Elder Care</option>
+                          <option value="Group Home">Group Home</option>
+                          <option value="After School">After School</option>
+                          <option value="Sports Program">Sports Program</option>
+                          <option value="Private School">Private School</option>
+                      </select>
+                      <label for="entityType">Entity Type</label>
+                  </div>
+                  <div class="col s12 m4 l4 input-field">
+                      <input type="text" class="entityCode" id="entityCode" />
+                      <label for="entityCode">Entity Code</label>
+                  </div>
+                  <div class="col s12 m2 l2">
+                    <a class="waves-effect waves-light btn tooltipped sdgenerateEntityCode" data-position="bottom" data-tooltip="Generate Entity Code" id="generateEntityCode"><i class="material-icons">refresh</i></a>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col s6 m6 l6">
+                      <a class="waves-effect waves-light btn-large orange cancelNewEntity" id="cancelNewEntity">Cancel</a>
+                  </div>
+                  <div class="col s6 m6 l6">
+                      <a class="waves-effect waves-light btn-large green right saveNewEntity" id="saveNewEntity">Save</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</template>

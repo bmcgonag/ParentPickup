@@ -33,6 +33,7 @@ Template.systemAdminLogin.events({
                 } else {
                     console.log("login result: " + result);
                     Session.set("loginError", false);
+                    FlowRouter.go('/dashboard');
                 }
             });
         }
